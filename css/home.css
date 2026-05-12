@@ -1,0 +1,604 @@
+/* Background */
+.bg-conexao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(8px);
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Seção Principal */
+.secao-principal {
+    padding: 60px 20px;
+    text-align: center;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Imagem de Perfil */
+.imagem-perfil {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.imagem-perfil img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #5fc3f7;
+    box-shadow: 0 0 30px rgba(95, 195, 247, 0.5), 0 0 60px rgba(95, 195, 247, 0.2);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.imagem-perfil img:hover {
+    transform: scale(1.05) rotateZ(2deg);
+    filter: brightness(1.1);
+}
+
+/* Título */
+.titulo {
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #5fc3f7, #1ad102);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+}
+
+.destaque {
+    font-weight: bold;
+    color: #5fc3f7;
+    text-shadow: 0 0 20px rgba(95, 195, 247, 0.5);
+}
+
+/* Descrição */
+.descricao {
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #d0d0d0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Botões Container */
+.container-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Botão de Ação */
+.botao-acao {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(135deg, #5fc3f7, #1ad102);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(95, 195, 247, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.botao-acao::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+}
+
+.botao-acao:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(95, 195, 247, 0.5);
+}
+
+.botao-acao:hover::before {
+    left: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .titulo { font-size: 32px; }
+    .imagem-perfil img { width: 180px; height: 180px; }
+    .secao-principal { padding: 40px 15px; }
+    .descricao { font-size: 14px; }
+}
+
+@media (max-width: 600px) {
+    .titulo { font-size: 26px; }
+    .imagem-perfil img { width: 150px; height: 150px; }
+    .botao-acao { padding: 12px 25px; font-size: 14px; }
+}
+
+@media (max-width: 375px) {
+    .titulo { font-size: 22px; }
+    .descricao { font-size: 13px; }
+    .botao-acao { padding: 10px 20px; font-size: 12px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SEÇÃO DE SERVIÇOS
+   ═══════════════════════════════════════════════════════════ */
+
+.secao-servicos {
+    padding: 80px 20px 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.servicos-titulo {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #5fc3f7, #1ad102);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+}
+
+.servicos-subtitulo {
+    color: #b0b0b0;
+    font-size: 16px;
+    margin-bottom: 50px;
+    line-height: 1.6;
+}
+
+/* ─── Grid dos Cards ────────────────────────────────────────── */
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* ─── Card ──────────────────────────────────────────────────── */
+.servico-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 40px 28px 32px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servico-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #5fc3f7, transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.servico-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(95, 195, 247, 0.25);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(95, 195, 247, 0.1);
+}
+
+.servico-card:hover::before {
+    opacity: 1;
+}
+
+/* ─── Card Destaque ─────────────────────────────────────────── */
+.destaque-card {
+    border-color: rgba(95, 195, 247, 0.2);
+    background: rgba(95, 195, 247, 0.05);
+}
+
+.destaque-card::before {
+    opacity: 0.5;
+}
+
+.servico-badge {
+    position: absolute;
+    top: 16px;
+    right: -30px;
+    background: linear-gradient(135deg, #5fc3f7, #1ad102);
+    color: #000;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 40px;
+    transform: rotate(45deg);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ─── Ícone ─────────────────────────────────────────────────── */
+.servico-icone {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(95, 195, 247, 0.15), rgba(26, 209, 2, 0.1));
+    border: 1px solid rgba(95, 195, 247, 0.15);
+    transition: all 0.3s ease;
+}
+
+.servico-icone svg {
+    width: 32px;
+    height: 32px;
+    color: #5fc3f7;
+    transition: color 0.3s ease;
+}
+
+.servico-card:hover .servico-icone {
+    background: linear-gradient(135deg, rgba(95, 195, 247, 0.25), rgba(26, 209, 2, 0.2));
+    box-shadow: 0 0 20px rgba(95, 195, 247, 0.2);
+}
+
+.servico-card:hover .servico-icone svg {
+    color: #1ad102;
+}
+
+/* ─── Nome do Serviço ───────────────────────────────────────── */
+.servico-nome {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+}
+
+/* ─── Lista de Features ─────────────────────────────────────── */
+.servico-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px;
+    text-align: left;
+    width: 100%;
+    flex: 1;
+}
+
+.servico-lista li {
+    position: relative;
+    padding: 8px 0 8px 24px;
+    font-size: 14px;
+    color: #c0c0c0;
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.servico-lista li:last-child {
+    border-bottom: none;
+}
+
+.servico-lista li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #1ad102;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* ─── Botão do Card ─────────────────────────────────────────── */
+.servico-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 8px;
+    background: transparent;
+    border: 1.5px solid rgba(95, 195, 247, 0.4);
+    color: #5fc3f7;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.servico-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #5fc3f7, #1ad102);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.servico-btn:hover {
+    color: #000;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(95, 195, 247, 0.3);
+}
+
+.servico-btn:hover::before {
+    left: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FORMULÁRIO DE SERVIÇO
+   ═══════════════════════════════════════════════════════════ */
+
+.secao-formulario {
+    padding: 40px 20px 80px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.formulario-container {
+    background: rgba(255, 255, 255, 0.03);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 45px 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.formulario-titulo {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 8px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.formulario-desc {
+    color: #b0b0b0;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+/* ─── Campos ────────────────────────────────────────────────── */
+.form-servico {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-campo label {
+    font-size: 13px;
+    color: #5fc3f7;
+    font-weight: 500;
+    margin-left: 4px;
+}
+
+.form-campo input,
+.form-campo select,
+.form-campo textarea {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 14px 16px;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.form-campo select {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235fc3f7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 18px;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.form-campo select option {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+.form-campo textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-campo input:focus,
+.form-campo select:focus,
+.form-campo textarea:focus {
+    outline: none;
+    border-color: #1ad102;
+    background: rgba(26, 209, 2, 0.05);
+    box-shadow: 0 0 15px rgba(26, 209, 2, 0.15);
+}
+
+.form-campo input::placeholder,
+.form-campo textarea::placeholder {
+    color: #666;
+}
+
+/* ─── Botão de Envio ────────────────────────────────────────── */
+.form-btn {
+    position: relative;
+    margin-top: 10px;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    background: linear-gradient(135deg, #5fc3f7, #1ad102);
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(26, 209, 2, 0.25);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(26, 209, 2, 0.35);
+    filter: brightness(1.1);
+}
+
+.form-btn:active {
+    transform: translateY(0);
+}
+
+.form-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.form-loader {
+    display: none;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    border-top-color: #000;
+    animation: srv-spin 0.8s linear infinite;
+}
+
+@keyframes srv-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ─── Sucesso ───────────────────────────────────────────────── */
+.form-sucesso {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+    animation: srv-fadeIn 0.6s ease-out;
+}
+
+.form-sucesso .check-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.form-sucesso .check-circle {
+    animation: srv-stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.form-sucesso .check-path {
+    animation: srv-stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes srv-stroke {
+    100% { stroke-dashoffset: 0; }
+}
+
+.form-sucesso h3 {
+    font-size: 28px;
+    color: #1ad102;
+    margin-bottom: 10px;
+}
+
+.form-sucesso p {
+    color: #b0b0b0;
+    font-size: 16px;
+    margin-bottom: 28px;
+}
+
+.form-btn-novo {
+    background: transparent;
+    border: 1.5px solid #5fc3f7;
+    color: #5fc3f7;
+    padding: 12px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-btn-novo:hover {
+    background: #5fc3f7;
+    color: #000;
+    box-shadow: 0 0 20px rgba(95, 195, 247, 0.4);
+}
+
+@keyframes srv-fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVIDADE — Serviços e Formulário
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+    .servicos-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .servicos-titulo { font-size: 30px; }
+    .secao-servicos { padding: 60px 20px 40px; }
+}
+
+@media (max-width: 600px) {
+    .servicos-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .servicos-titulo { font-size: 26px; }
+    .servicos-subtitulo { font-size: 14px; margin-bottom: 30px; }
+    .servico-card { padding: 30px 24px 28px; }
+    .formulario-container { padding: 30px 22px; }
+    .formulario-titulo { font-size: 22px; }
+}
+
+@media (max-width: 375px) {
+    .servico-nome { font-size: 18px; }
+    .servico-lista li { font-size: 13px; }
+    .servico-btn { padding: 10px 24px; font-size: 13px; }
+    .formulario-container { padding: 25px 18px; }
+}

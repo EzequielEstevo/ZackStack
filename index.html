@@ -5,12 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfólio de Ezequiel Estevo</title>
 
-    <link rel="stylesheet" href="index.css" />
     <link rel="icon" href="img/aguia perfil.png" type="image/png" />
-    <link rel="stylesheet" href="carousel.css" />  
-    <link rel="stylesheet" href="efeitos.css" />
-    <link rel="stylesheet" href="matrix.css" />
-    <link rel="stylesheet" href="page-transition.css" />
+
+    <!-- CSS Global (reset, menu, matrix, transições) -->
+    <link rel="stylesheet" href="css/global.css" />
+    <!-- CSS desta página -->
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/carousel.css" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,7 +22,6 @@
     />
   </head>
   <body>
-
 
     <!-- Menu -->
     <header class="cabecalho">
@@ -47,49 +49,130 @@
         projetos inovadores. Ademais, há mais de 4 anos, tenho me dedicado a
         aprender e aprimorar minhas habilidades em tecnologia.
       </p>
-      
- <div class="container-botoes">
+
+      <div class="container-botoes">
         <a href="contato.html" class="botao-acao"> Saiba Mais </a>
       </div>
 
-
       <div class="carousel">
-  <div class="carousel-track">
+        <div class="carousel-track">
 
-    <div class="slide">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-    </div>
+          <div class="slide">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+          </div>
 
-    <div class="slide">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-    </div>
+          <div class="slide">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+          </div>
 
-    <div class="slide">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-    </div>
+          <div class="slide">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+          </div>
 
-    <div class="slide">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
-    </div>
+          <div class="slide">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+          </div>
 
-    <div class="slide">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" alt="Windows">
-    </div>
+          <div class="slide">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" alt="Windows">
+          </div>
 
-    <div class="slide">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-    </div>
+          <div class="slide">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+          </div>
 
-    <div class="slide">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle">
-    </div>
+          <div class="slide">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle">
+          </div>
 
-  </div>
-</div>
+        </div>
+      </div>
 
-<script src="config.js"></script>
-<script src="matrix.js"></script>
-<script src="page-transition.js"></script>
-     
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- Seção de Serviços                                      -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <section class="secao-servicos" id="servicos">
+      <h2 class="servicos-titulo">Serviços</h2>
+      <p class="servicos-subtitulo">Soluções sob medida para sua presença digital</p>
+
+      <div class="servicos-grid">
+
+        <!-- Card 1 — Criação de Sites -->
+        <article class="servico-card">
+          <div class="servico-icone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+              <polyline points="7 8 5 10 7 12"/>
+              <polyline points="17 8 19 10 17 12"/>
+              <line x1="10" y1="14" x2="14" y2="6"/>
+            </svg>
+          </div>
+          <h3 class="servico-nome">Criação de Sites</h3>
+          <ul class="servico-lista">
+            <li>Sites modernos e responsivos</li>
+            <li>Layout profissional</li>
+            <li>Compatível com desktop e mobile</li>
+            <li>Performance otimizada</li>
+          </ul>
+          <a href="contato.html?servico=Criação+de+Sites" class="servico-btn">Solicitar Serviço</a>
+        </article>
+
+        <!-- Card 2 — Landing Pages -->
+        <article class="servico-card destaque-card">
+          <div class="servico-badge">Popular</div>
+          <div class="servico-icone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="M12 4v16"/>
+              <path d="M2 12h20"/>
+              <circle cx="7" cy="8" r="1.5" fill="currentColor" stroke="none"/>
+              <path d="M15 8h3"/>
+              <path d="M15 16h3"/>
+              <path d="M5 16h3"/>
+            </svg>
+          </div>
+          <h3 class="servico-nome">Landing Pages</h3>
+          <ul class="servico-lista">
+            <li>Alta conversão de vendas</li>
+            <li>Integração com pagamentos</li>
+            <li>Botões de compra e checkout</li>
+            <li>Estrutura focada em vendas</li>
+          </ul>
+          <a href="contato.html?servico=Landing+Page+com+Pagamentos" class="servico-btn">Solicitar Serviço</a>
+        </article>
+
+        <!-- Card 3 — Portfólio Online -->
+        <article class="servico-card">
+          <div class="servico-icone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+              <circle cx="9" cy="11" r="2.5"/>
+              <path d="M15 9h3"/>
+              <path d="M15 13h3"/>
+              <path d="M5 17c1-2 3-3 4-3s3 1 4 3"/>
+            </svg>
+          </div>
+          <h3 class="servico-nome">Portfólio Online</h3>
+          <ul class="servico-lista">
+            <li>Portfólio profissional personalizado</li>
+            <li>Opção com domínio gratuito</li>
+            <li>Opção com domínio personalizado</li>
+            <li>Design moderno para projetos</li>
+          </ul>
+          <a href="contato.html?servico=Portfólio+Online" class="servico-btn">Solicitar Serviço</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="js/matrix.js"></script>
+    <script src="js/page-transition.js"></script>
+    <script src="js/config.js"></script>
+
   </body>
 </html>

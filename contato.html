@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
-    <link rel="stylesheet" href="contato.css">
-    <link rel="stylesheet" href="efeitos.css">
-    <link rel="stylesheet" href="page-transition.css">
+    <title>Contato — Ezequiel Estevo</title>
+
     <link rel="icon" href="img/aguia perfil.png" type="image/png" />
-    <link rel="stylesheet" href="matrix.css">
+
+    <!-- CSS Global (reset, menu, matrix, transições) -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- CSS desta página -->
+    <link rel="stylesheet" href="css/contato.css">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -49,7 +53,7 @@
         </div>
 
         <!-- Formulário de Contato -->
-        <div class="container-formulario">
+        <div class="container-formulario" id="formulario">
             <div id="form-content">
                 <h2 class="titulo-secundario">Ou envie uma mensagem</h2>
                 <form name="contact" method="POST" data-netlify="true" class="formulario" id="contact-form">
@@ -68,6 +72,16 @@
                             <label for="phone">Telefone / WhatsApp</label>
                             <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000">
                         </div>
+                    </div>
+
+                    <div class="campo">
+                        <label for="servico">Serviço desejado</label>
+                        <select id="servico" name="servico">
+                            <option value="" selected>Nenhum / Outro</option>
+                            <option value="Criação de Sites">Criação de Sites</option>
+                            <option value="Landing Page com Pagamentos">Landing Page com Pagamentos</option>
+                            <option value="Portfólio Online">Portfólio Online</option>
+                        </select>
                     </div>
 
                     <div class="campo">
@@ -110,6 +124,30 @@
         const btnSubmit = document.getElementById('btn-submit');
         const btnText = document.getElementById('btn-text');
         const loader = document.getElementById('loader');
+        const servicoSelect = document.getElementById('servico');
+
+        // ── Lê o parâmetro ?servico= da URL (vindo dos cards de serviço) ──
+        const params = new URLSearchParams(window.location.search);
+        const servicoParam = params.get('servico');
+
+        if (servicoParam) {
+            // Pré-seleciona o serviço no dropdown
+            for (const opt of servicoSelect.options) {
+                if (opt.value === servicoParam) {
+                    servicoSelect.value = servicoParam;
+                    break;
+                }
+            }
+            // Scroll suave até o formulário
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    document.getElementById('formulario').scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }, 800);
+            });
+        }
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -140,7 +178,6 @@
                 body: new URLSearchParams(formData).toString(),
             })
             .then(() => {
-                // Animação de saída do formulário
                 formContent.classList.add('fade-out');
                 setTimeout(() => {
                     formContent.style.display = 'none';
@@ -168,7 +205,9 @@
         });
     </script>
 
-    <script src="matrix.js"></script>
-    <script src="page-transition.js"></script>
+    <!-- Scripts -->
+    <script src="js/matrix.js"></script>
+    <script src="js/page-transition.js"></script>
 </body>
 </html>
+
