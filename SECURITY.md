@@ -1,10 +1,12 @@
 # Security Policy
 
 ## Supported Versions
-Apenas a versão mais recente está recebendo updates de segurança.
+
+| Version | Supported |
+| ------- | :-------: |
+| Latest  | ✅        |
+| < Latest| ❌        |
 
 ## Reporting a Vulnerability
-Se encontrar uma vulnerabilidade, ou informações incoerentes envie um email para:
-ezequeoezequ@gmail.com
 
-Responderemos em até 72 horas.
+If you discover a security vulnerability, bug, or inconsistent information, please report it via our contact form.
